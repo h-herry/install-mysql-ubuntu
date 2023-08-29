@@ -11,19 +11,13 @@ sudo systemctl status mysql
 sudo mysql_secure_installation
 
 
-查看默认用户名密码（跳过）
-
-sudo cat /etc/mysql/debian.cnf 
-
-user     = debian-sys-maint 
-password = CFi8BHUqdkU13L24
-
-
 登录mysql 回车
 
 mysql -h localhost -u root -p
 
 修改密码by后是密码
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new_password';
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 
